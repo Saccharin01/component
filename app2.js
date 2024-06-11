@@ -1,6 +1,6 @@
 const http = require("http");
 const fs = require("fs");
-// console.log(http);
+const htmlTemplate = require("./module.HTMLtemplate.js");
 
 let container = [];
 let server = http.createServer((req, res) => {
@@ -13,14 +13,14 @@ let server = http.createServer((req, res) => {
       console.log(container);
     }
     if (req.url === container[container.indexOf(req.url)]) {
-      fs.readFile(`${}`,'utf-8',(err,data)=>{
-        if(err){
-          console.error(`this Error Occur : ${err}`)
+      fs.readFile(`${asdf}`, "utf-8", (err, data) => {
+        if (err) {
+          console.error(`this Error Occur : ${err}`);
         } else {
-          res.writeHead(200, {"content-Type":""})
+          res.writeHead(200, { "content-Type": "" });
           res.end();
         }
-      })
+      });
       console.log("tracking this part");
       res.end();
     }
