@@ -1,4 +1,4 @@
-let htmlTemplate = function htmlTemplate() {
+let htmlTemplate = () => {
   return `<!DOCTYPE html>
 <html lang="ko">
 <head>
