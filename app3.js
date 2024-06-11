@@ -1,5 +1,5 @@
 const http = require("http");
-const htmlTemplate = require("./js/module/module.HTMLtemplate");
+const htmlTemplate = require("./js/module.HTMLtemplate");
 const toy = require('./toy')
 let container = [];
 
@@ -14,9 +14,10 @@ let server = http.createServer((req, res) => {
       console.log(req.url)
       // if (container.includes(req.url) && req.url === "/") {
       if (req.url === "/") {
-        res.write(htmlTemplate());
-        res.end();
+        res.writeHead(200, {"content-Type": "text/html"});
+        res.end(htmlTemplate());
       }
+      toy(req.url,'js',res)
 
       // if (container.includes(req.url) && req.url.split(".")[1] === "js") {
       // if (req.url.split(".")[1] === "js") {
@@ -45,7 +46,6 @@ let server = http.createServer((req, res) => {
       //   });
       // } else {
       // }
-      toy(req.url,'js',res)
     }
   
 });
