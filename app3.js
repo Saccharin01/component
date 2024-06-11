@@ -1,7 +1,10 @@
 const http = require("http");
+const htmlTemplate = require("./js/module/module.HTMLtemplate");
+const toy = require('./toy')
 let container = [];
+
+
 let server = http.createServer((req, res) => {
-  const toy = require('./toy')
 
   if (!container.includes(req.url)) {
     container.push(req.url);
@@ -11,7 +14,6 @@ let server = http.createServer((req, res) => {
       console.log(req.url)
       // if (container.includes(req.url) && req.url === "/") {
       if (req.url === "/") {
-        const htmlTemplate = require("./module.HTMLtemplate");
         res.write(htmlTemplate());
         res.end();
       }
