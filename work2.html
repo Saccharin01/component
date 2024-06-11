@@ -38,6 +38,7 @@
         let i = names.map((ele) => {
           return tagComponent("h1", ele);
         });
+        return `${i.join("")}`;
         // return `
         // ${tagComponent("h1", "hi, World")}
         // ${tagComponent("h2", "안녕하세요, World")}
@@ -54,7 +55,6 @@
         // });
         // let test = names.map((ele) => {});
         // const p = i.join("");
-        return `${i.join("")}`;
       };
 
       // names.forEach((ele) => {
