@@ -9,14 +9,14 @@
     <div id="root"></div>
     <script>
       const root = document.getElementById("root");
-      const h1Component = (tagName, textNode) => {
+      const tagComponent = (tagName, textNode) => {
         return `<${tagName}>${textNode}</${tagName}>`;
       };
       const app = () => {
         return `
-        ${h1Component("h1", "hi, World")}
-        ${h1Component("h2", "안녕하세요, World")}
-        ${h1Component("h3", "hola, World")}
+        ${tagComponent("h1", "hi, World")}
+        ${tagComponent("h2", "안녕하세요, World")}
+        ${tagComponent("h3", "hola, World")}
         `;
       };
       console.log(app());
