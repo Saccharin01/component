@@ -35,16 +35,31 @@
         return `<${tagName}>${textNode}</${tagName}>`;
       };
       const app = () => {
-        for (let i = 0; i < names.length; i++) {
-          // ${tagComponent("h1", "hi, World")}
-          // ${tagComponent("h2", "안녕하세요, World")}
-          // ${tagComponent("h3", "hola, World")}
+        let i = names.map((ele) => {
+          return tagComponent("h1", ele);
+        });
+        // return `
+        // ${tagComponent("h1", "hi, World")}
+        // ${tagComponent("h2", "안녕하세요, World")}
+        // ${tagComponent("h3", "hola, World")}
+        // `;
 
-          console.log(names[i]);
-        }
+        //* 배열에 넣기
+        //* 배열 평탄화 작업하기
+        //* innterHTML에 넣기 끝 :)
 
-        return;
+        // let container = [];
+        // names.forEach((ele) => {
+        //   container.push(ele);
+        // });
+        // let test = names.map((ele) => {});
+        // const p = i.join("");
+        return `${i.join("")}`;
       };
+
+      // names.forEach((ele) => {
+      //   ele === "조우식" ? (root.innerHTML += tagComponent(h1, ele))  : (root.innerHTML += tagComponent(p, ele));
+      // });
 
       console.log(app());
 
