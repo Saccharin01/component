@@ -13,14 +13,12 @@ let server = http.createServer((req, res) => {
       }
       if (container.includes(req.url) && req.url.split(".")[1] === "js") {
         const fs = require("fs");
-        fs.readdir("./js", (err, data) => {
+        fs.readdir(`${req.url.split(".")[1]}`, (err, data) => {
           if (err) {
             console.log(err);
           } else {
-            fs.readFile(
-              `${req.url.split(".")[1]}/${data}`,
-              "utf-8",
-              (err, data) => {
+            console.log(data);
+            fs.readFile(`${req.url.split(".")[1]}/${data[data.indexOf(req.url.split("/")[1])]})}`,"utf-8",(err, data) => {
                 if (err) {
                   res.writeHead(500, { "content-Type": "text/plain" });
                   res.write(`<h1>Server Error</h1>`);
