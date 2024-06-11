@@ -1,22 +1,31 @@
-let container = ["/", "/index.html"];
-const fs = require("fs");
-
-// let something = container[container.indexOf(`/`)]
-let something = "/";
+let container = ["/", "/work3.html"];
+let something = "/work3.html";
 // ? somethind === req.url
+let htmlTemplate = require("../module/module.HTMLtemplate");
 let logicCheck = container[container.indexOf(something)];
-
 console.log(logicCheck);
 
+if (something === "/") {
+  console.log("res.writeHead(200. {content-Type})");
+  console.log(`res.write(${htmlTemplate})`);
+  console.log("res.end()");
+}
+
+console.log(logicCheck.split("/")[0]);
+
 if (something === container[container.indexOf(something)]) {
-  fs.readFile(`${logicCheck}`, "utf-8", (err, data) => {
+  const fs = require("fs");
+  fs.readFile(`${logicCheck.split("/")[1]}`, "utf-8", (err, data) => {
     if (err) {
       console.error(`this Error Occur : ${err}`);
     } else {
-      res.writeHead(200, { "content-Type": "" });
-      res.end(data);
+      console.log('res.writeHead(200, { "content-Type": "" })');
+      console.log("res.end(data)");
+      console.log(data);
     }
   });
-  console.log("tracking this part");
   // res.end();
+}
+
+if (something === "/") {
 }
