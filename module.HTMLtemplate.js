@@ -1,5 +1,5 @@
-let htmlTemplate = function htmlTemplate(content){
-    return`<!DOCTYPE html>
+let htmlTemplate = function htmlTemplate() {
+  return `<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -7,13 +7,11 @@ let htmlTemplate = function htmlTemplate(content){
   <title>Document</title>
 </head>
 <body>
-  <div id="root">
-  ${content}
-  </div>
-  <script type = "module" src="core.js"></script>
+  <div id="root"></div>
+  <script type = "module" src="script.js"></script>
 </body>
 </html>`;
-}
+};
 
 // let htmlTemplate = function htmlTemplate(content){
 //   return
@@ -33,22 +31,6 @@ let htmlTemplate = function htmlTemplate(content){
 // </html>`;
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // let htmlTemplate(content){
 // `<!DOCTYPE html>
 // <html lang="ko">
@@ -66,4 +48,4 @@ let htmlTemplate = function htmlTemplate(content){
 // </html>`;
 // };
 
-module.exports = htmlTemplate
+module.exports = htmlTemplate;
