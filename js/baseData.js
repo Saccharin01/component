@@ -1,4 +1,4 @@
-export const names = [
+export const baseData = [
   "구하림",
   "김보미",
   "김수현",

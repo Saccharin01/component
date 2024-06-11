@@ -1,9 +1,9 @@
-import { names } from "./baseData.js";
+import { baseData } from "./baseData.js";
 import { tagComponent } from "./tagComponent.js";
 
 
-export const app = () => {
-  let i = names.map((ele) => {
+export const assembly = () => {
+  let i = baseData.map((ele) => {
     if (ele === "조우식") {
       return tagComponent("h1", ele);
     } else {
