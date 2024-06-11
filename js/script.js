@@ -9,6 +9,7 @@ console.log(render);
 
 const root = document.getElementById("root");
 
-document.addEventListener("DOMContentLoaded", () => {
-  render();
-});
+render()
+// document.addEventListener("DOMContentLoaded", () => {
+//   render();
+// });

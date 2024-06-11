@@ -1,3 +1,7 @@
+import { names } from "./baseData.js";
+import { tagComponent } from "./tagComponent.js";
+
+
 export const app = () => {
   let i = names.map((ele) => {
     if (ele === "조우식") {
