@@ -1,6 +1,7 @@
 const http = require("http");
 const htmlTemplate = require("./js/module.HTMLtemplate");
-const toy = require('./toy')
+const toy3 = require('./toy2.js')
+const fs = require('fs')
 let container = [];
 
 
@@ -17,7 +18,63 @@ let server = http.createServer((req, res) => {
         res.writeHead(200, {"content-Type": "text/html"});
         res.end(htmlTemplate());
       }
-      toy(req.url,'js',res)
+        let toy3 = (reqUrl, res, Dirname,  contentType, callback)=>{
+          fs.readdir(`${Dirname}`, (err, data) => {
+            if (err) {
+              res.writeHead(500, { "content-Type": "text/plain" });
+              res.end();
+              console.error(err);
+              return;
+            } else {
+              fs.readFile(`${Dirname}/${data[data.indexOf(`${reqUrl}`.split("/")[1])]}`,"utf-8",(err, data) => {
+                try {
+        
+                  res.writeHead(200, {"content-Type": `${contentType}`});
+                  res.write(data);
+                  // res.end();
+                  // return;
+        
+                } catch (err) {
+                  if(err){
+                    console.error(err);
+                    res.writeHead(500, { "content-Type": "text/plain" });
+                    // res.end();
+                    // return;
+
+                  }
+        
+        
+                } finally{
+                  res.end();
+                  return;
+                }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                  if (err) {
+                    
+                  } else {
+                   
+                  }
+                }
+              );
+            }
+          });
+        }
+      
+      
+
+
+
+        toy3(req.url, res, 'js', 'Application/javaScript')
 
       // if (container.includes(req.url) && req.url.split(".")[1] === "js") {
       // if (req.url.split(".")[1] === "js") {
